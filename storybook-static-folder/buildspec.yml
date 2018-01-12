@@ -1,0 +1,25 @@
+version: 0.1
+
+# This buildspec.yml requires a AWS CodeBuild project as follows:
+ - Environment:
+   - Operating system: Ubuntu
+   - Runtime: Node.js
+   - Version: aws/codebuild/nodejs:6.3.1
+ - Service role:
+#   - it requires 'cloudformation:ValidateTemplate' in addition to a generated role.
+#     e.g.
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "0",
+                    "Effect": "Allow",
+                    "Action": [
+                        "cloudformation:ValidateTemplate"
+                    ],
+                    "Resource": [
+                        "*"
+                    ]
+                }
+            ]
+        }
