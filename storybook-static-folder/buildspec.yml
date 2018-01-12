@@ -1,5 +1,5 @@
 version: 0.1
-
+#testing if codebuild is triggered
 # This buildspec.yml requires a AWS CodeBuild project as follows:
  - Environment:
    - Operating system: Ubuntu
